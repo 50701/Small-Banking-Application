@@ -30,16 +30,48 @@
 
         <div class="mb-3">
             <label class="form-label name required">Name</label>
-            <input type="text" class="form-control" placeholder="Enter name" id="name" name="name" value="{{ old('name') }}" required>
+            <input type="text" 
+                class="form-control" 
+                placeholder="Enter name" 
+                id="name" 
+                name="name" 
+                value="{{ old('name') }}" 
+                required 
+                minlength="2" 
+                maxlength="50" 
+                pattern="^[a-zA-Z]+(\s[a-zA-Z]+)*$" 
+                title="Please enter a valid name. Only letters and spaces are allowed, with 2 to 50 characters.">
+
         </div>
         <div class="mb-3">
             <label class="form-label email required">Email address</label>
-            <input type="email" class="form-control" placeholder="Enter email" id="email" name="email" value="{{ old('email') }}" required>
+            <input type="email" 
+                class="form-control" 
+                placeholder="Enter email" 
+                id="email" 
+                name="email" 
+                value="{{ old('email') }}" 
+                required 
+                maxlength="100" 
+                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" 
+                title="Please enter a valid email address.">
+
         </div>
         <div class="mb-3">
             <label class="form-label password required">Password</label>
             <div class="input-group input-group-flat">
-                <input type="password" class="form-control" placeholder="Password" autocomplete="off" id="password" name="password" required minlength="8">
+            <input type="password" 
+                class="form-control" 
+                placeholder="Password" 
+                autocomplete="off" 
+                id="password" 
+                name="password" 
+                required 
+                minlength="8" 
+                maxlength="50" 
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                title="Password must be at least 8 characters long, contain at least one number, one uppercase letter, and one lowercase letter.">
+
                 <span class="input-group-text">
                     <a href="#" class="link-secondary" id="toggle-password" data-bs-toggle="tooltip" aria-label="Show password" data-bs-original-title="Show password"><!-- Download SVG icon from http://tabler-icons.io/i/eye -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path></svg>
